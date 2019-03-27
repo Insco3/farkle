@@ -12,14 +12,17 @@ class Farkle {
     }
 
     addPlayer(playerName){
-        this.players.push(playerName);
+       var newPlayer = new Player();
+        newPlayer.name = playerName;
+        this.players.push(newPlayer);
     }
 
     drawGame(){
         document.querySelector('#board').innerHTML='';
+       
         
         this.players.forEach((player)=>{
-            this.drawPlayer(player);
+            this.drawPlayer(player.name);
         });
         // loop over the players
         // display them on the screen
